@@ -1,0 +1,42 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# =========================
+# Arquivos Específicos do Starter Kit ContÁgil
+# =========================
+
+# Ignora os pacotes zipados da interface (para não subir a versão de produção pro GitHub)
+*.zip
+*.rar
+*.7z
+
+# Ignora os arquivos de cache do Python/Jython (se o interpretador gerar)
+__pycache__/
+*.py[cod]
+
+# Variáveis de ambiente (Segurança)
+.env
+.env.*
+!.env.example
