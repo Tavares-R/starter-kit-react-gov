@@ -193,3 +193,11 @@ Após a conclusão do desenvolvimento visual e das integrações de dados, é ne
    ```
 
 Salve seu script no ContÁgil. A partir deste momento, ao executar o sistema, o Jython automaticamente extrairá o `.zip` injetado na memória, levantará o servidor web interno e renderizará sua aplicação de forma completamente autônoma e autossuficiente.
+
+## 📂 Estrutura de Diretórios Recomendada
+
+- `src/assets/` - Imagens estáticas e logos.
+- `src/components/` - Pedaços visuais isolados (Botões, Modais, Tabelas).
+- `src/hooks/` - Lógicas reutilizáveis do React.
+- `src/services/` - Arquivos de comunicação com o Python/APIs.
+- `src/App.tsx` - O orquestrador central das telas.

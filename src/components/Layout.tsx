@@ -31,14 +31,13 @@ export function Layout({
       <main
         id="main"
         style={{
-          flex: '1 0 auto', // Cresce para preencher o vazio, mas não encolhe esmagando o conteúdo
-          paddingBottom: '3rem', // Dá um respiro extra para o footer não encostar nos cards
+          flex: '1 0 auto',
+          paddingBottom: '3rem',
         }}
       >
         <div className="container-lg pt-4 w-100">{children}</div>
       </main>
 
-      {/* Este div encapsula o Footer e impede que o navegador o esmague */}
       <div style={{ flexShrink: 0, marginTop: 'auto' }}>
         <Footer />
       </div>
