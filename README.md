@@ -30,7 +30,7 @@ Para iniciar um novo projeto utilizando esta arquitetura, você precisará confi
 
 1. Clone este repositório:
    ```bash
-   git clone [https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git](https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git)
+   git clone [https://github.com/Tavares-R/starter-kit-react-gov](https://github.com/Tavares-R/starter-kit-react-gov)
    ```
 2. Acesse a pasta do projeto e instale as dependências:
    ```bash
