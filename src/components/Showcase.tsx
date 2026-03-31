@@ -6,10 +6,41 @@ export function Showcase() {
   const [loading, setLoading] = useState(false);
   const [cpf, setCpf] = useState('');
   const [modalAberto, setModalAberto] = useState(false);
+  const [textoPython, setTextoPython] = useState('');
 
   const simularBusca = () => {
     setLoading(true);
     setTimeout(() => setLoading(false), 2000);
+  };
+
+  const handleEnviarPython = async () => {
+    // Validação simples para não enviar vazio
+    if (!textoPython) {
+      alert('Digite algo antes de enviar!');
+      return;
+    }
+
+    const pacoteParaPython = {
+      texto_digitado: textoPython,
+      nome_do_campo: 'Input de Teste via Botão',
+    };
+
+    try {
+      if (window.espelhar_no_terminal) {
+        const respostaString = await window.espelhar_no_terminal(
+          JSON.stringify(pacoteParaPython)
+        );
+        if (respostaString) {
+          console.log('Recibo do Python:', JSON.parse(respostaString));
+          // Opcional: Limpar o campo após o envio
+          setTextoPython('');
+        }
+      } else {
+        console.warn('Aguardando conexão com o backend Python...');
+      }
+    } catch (err) {
+      console.error('Falha na comunicação com o Jython:', err);
+    }
   };
 
   return (
@@ -49,6 +80,32 @@ export function Showcase() {
                   icon-sign="user"
                 ></br-input>
               </div>
+
+              {/* === NOSSO NOVO CAMPO DE COMUNICAÇÃO COM BOTÃO === */}
+              <div className="mb-3 p-3 border rounded bg-light">
+                <div className="text-bold mb-2 text-primary-default">
+                  <i className="fas fa-plug mr-2"></i>Teste de Integração Python
+                </div>
+
+                {/* d-flex coloca o input e o botão na mesma linha */}
+                <div className="d-flex align-items-end">
+                  <div className="flex-grow-1 mr-3">
+                    <br-input
+                      label="Digite algo para o Terminal"
+                      placeholder="Ex: Teste LABIT..."
+                      value={textoPython}
+                      onInput={(e: any) => setTextoPython(e.target.value)}
+                      icon-sign="terminal"
+                    ></br-input>
+                  </div>
+
+                  {/* Botão que dispara a função */}
+                  <br-button primary onClick={handleEnviarPython}>
+                    Enviar <i className="fas fa-paper-plane ml-2"></i>
+                  </br-button>
+                </div>
+              </div>
+              {/* ==================================================== */}
 
               <div className="mb-3">
                 <br-input
